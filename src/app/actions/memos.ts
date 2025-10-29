@@ -3,7 +3,17 @@
 import { supabase } from '@/utils/supabase'
 import { Memo, MemoFormData } from '@/types/memo'
 
-const mapRowToMemo = (row: any): Memo => ({
+type MemoRow = {
+  id: string
+  title: string
+  content: string
+  category: string
+  tags: string[] | null
+  created_at: string
+  updated_at: string
+}
+
+const mapRowToMemo = (row: MemoRow): Memo => ({
   id: row.id,
   title: row.title,
   content: row.content,

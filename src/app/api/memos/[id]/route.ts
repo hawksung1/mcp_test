@@ -1,8 +1,18 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { supabase } from '@/utils/supabase'
-import { MemoFormData } from '@/types/memo'
+import { Memo, MemoFormData } from '@/types/memo'
 
-const mapRowToMemo = (row: any) => ({
+type MemoRow = {
+  id: string
+  title: string
+  content: string
+  category: string
+  tags: string[] | null
+  created_at: string
+  updated_at: string
+}
+
+const mapRowToMemo = (row: MemoRow): Memo => ({
   id: row.id,
   title: row.title,
   content: row.content,
@@ -26,8 +36,9 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
       .single()
     if (error) return NextResponse.json({ error: error.message }, { status: 500 })
     return NextResponse.json({ memo: mapRowToMemo(data) })
-  } catch (e: any) {
-    return NextResponse.json({ error: e?.message || 'Invalid request' }, { status: 400 })
+  } catch (e: unknown) {
+    const message = e instanceof Error ? e.message : 'Invalid request'
+    return NextResponse.json({ error: message }, { status: 400 })
   }
 }
 
