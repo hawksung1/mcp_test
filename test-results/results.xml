@@ -1,0 +1,388 @@
+<testsuites id="" name="" tests="12" failures="12" skipped="0" errors="0" time="107.64454800000001">
+<testsuite name="e2e\memo.spec.ts" timestamp="2025-10-29T06:26:43.955Z" hostname="chromium" tests="4" failures="4" skipped="0" time="32.736" errors="0">
+<testcase name="메모 앱 주요 기능 › 메모 생성 및 목록 표시, 새로고침 후에도 유지" classname="e2e\memo.spec.ts" time="13.733">
+<failure message="memo.spec.ts:9:7 메모 생성 및 목록 표시, 새로고침 후에도 유지" type="FAILURE">
+<![CDATA[  [chromium] › e2e\memo.spec.ts:9:7 › 메모 앱 주요 기능 › 메모 생성 및 목록 표시, 새로고침 후에도 유지 ──────────────────────
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: '테스트 메모' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByRole('heading', { name: '테스트 메모' })
+
+
+      28 |
+      29 |     // 카드 목록에서 제목이 보이는지 확인
+    > 30 |     await expect(page.getByRole('heading', { name: '테스트 메모' })).toBeVisible()
+         |                                                                 ^
+      31 |
+      32 |     // 새로고침 후에도 존재해야 함(로컬스토리지 저장 확인)
+      33 |     await page.reload()
+        at C:\Users\masocampus\Desktop\memo-app\tests\e2e\memo.spec.ts:30:65
+
+    Error Context: ..\test-results\e2e-memo-메모-앱-주요-기능-메모-생성-및-목록-표시-새로고침-후에도-유지-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-memo-메모-앱-주요-기능-메모-생성-및-목록-표시-새로고침-후에도-유지-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="메모 앱 주요 기능 › 상세 보기에서 편집 및 저장 반영" classname="e2e\memo.spec.ts" time="9.13">
+<failure message="memo.spec.ts:37:7 상세 보기에서 편집 및 저장 반영" type="FAILURE">
+<![CDATA[  [chromium] › e2e\memo.spec.ts:37:7 › 메모 앱 주요 기능 › 상세 보기에서 편집 및 저장 반영 ─────────────────────────────
+
+    Error: locator.click: Error: strict mode violation: getByTitle('편집') resolved to 8 elements:
+        1) <button title="편집" class="p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">…</button> aka getByRole('button', { name: '편집' }).nth(1)
+        2) <button title="편집" class="p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">…</button> aka getByRole('button', { name: '편집' }).nth(2)
+        3) <button title="편집" class="p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">…</button> aka getByRole('button', { name: '편집' }).nth(3)
+        4) <button title="편집" class="p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">…</button> aka getByRole('button', { name: '편집' }).nth(4)
+        5) <button title="편집" class="p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">…</button> aka getByRole('button', { name: '편집' }).nth(5)
+        6) <button title="편집" class="p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">…</button> aka getByRole('button', { name: '편집', exact: true }).nth(5)
+        7) <button title="편집" class="p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">…</button> aka locator('div:nth-child(7) > .flex.justify-between > .flex.gap-2.ml-4 > .p-2.text-gray-500.hover\\:text-blue-600')
+        8) <button title="편집" class="p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">…</button> aka locator('.flex.justify-between.items-start.mb-4 > .flex.gap-2.ml-4 > .p-2.text-gray-500.hover\\:text-blue-600')
+
+    Call log:
+      - waiting for getByTitle('편집')
+
+
+      50 |
+      51 |     // 편집 버튼 클릭 후 제목/내용 수정
+    > 52 |     await page.getByTitle('편집').click()
+         |                                 ^
+      53 |     const titleInput = page.getByPlaceholder('제목')
+      54 |     await titleInput.fill('편집된 제목')
+      55 |     const detailEditor = page.locator('.w-md-editor-text-input').first()
+        at C:\Users\masocampus\Desktop\memo-app\tests\e2e\memo.spec.ts:52:33
+
+    Error Context: ..\test-results\e2e-memo-메모-앱-주요-기능-상세-보기에서-편집-및-저장-반영-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-memo-메모-앱-주요-기능-상세-보기에서-편집-및-저장-반영-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="메모 앱 주요 기능 › 상세 보기에서 삭제 확인 다이얼로그 거쳐 삭제" classname="e2e\memo.spec.ts" time="5.302">
+<failure message="memo.spec.ts:72:7 상세 보기에서 삭제 확인 다이얼로그 거쳐 삭제" type="FAILURE">
+<![CDATA[  [chromium] › e2e\memo.spec.ts:72:7 › 메모 앱 주요 기능 › 상세 보기에서 삭제 확인 다이얼로그 거쳐 삭제 ──────────────────────
+
+    Error: locator.click: Error: strict mode violation: getByTitle('삭제') resolved to 8 elements:
+        1) <button title="삭제" class="p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">…</button> aka getByRole('button', { name: '삭제' }).nth(1)
+        2) <button title="삭제" class="p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">…</button> aka getByRole('button', { name: '삭제' }).nth(2)
+        3) <button title="삭제" class="p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">…</button> aka getByRole('button', { name: '삭제' }).nth(3)
+        4) <button title="삭제" class="p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">…</button> aka getByRole('button', { name: '삭제' }).nth(4)
+        5) <button title="삭제" class="p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">…</button> aka getByRole('button', { name: '삭제' }).nth(5)
+        6) <button title="삭제" class="p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">…</button> aka getByRole('button', { name: '삭제', exact: true }).nth(5)
+        7) <button title="삭제" class="p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">…</button> aka locator('div:nth-child(7) > .flex.justify-between > .flex.gap-2.ml-4 > .p-2.text-gray-500.hover\\:text-red-600')
+        8) <button title="삭제" class="p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">…</button> aka locator('.flex.justify-between.items-start.mb-4 > .flex.gap-2.ml-4 > .p-2.text-gray-500.hover\\:text-red-600')
+
+    Call log:
+      - waiting for getByTitle('삭제')
+
+
+      85 |
+      86 |     // 삭제 버튼 -> 확인 다이얼로그 -> 삭제 버튼
+    > 87 |     await page.getByTitle('삭제').click()
+         |                                 ^
+      88 |     await page.getByRole('button', { name: '삭제' }).click()
+      89 |
+      90 |     // 모달이 닫히고 카드가 목록에서 사라졌는지 확인
+        at C:\Users\masocampus\Desktop\memo-app\tests\e2e\memo.spec.ts:87:33
+
+    Error Context: ..\test-results\e2e-memo-메모-앱-주요-기능-상세-보기에서-삭제-확인-다이얼로그-거쳐-삭제-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-memo-메모-앱-주요-기능-상세-보기에서-삭제-확인-다이얼로그-거쳐-삭제-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="메모 앱 주요 기능 › 검색 및 카테고리 필터 동작" classname="e2e\memo.spec.ts" time="4.571">
+<failure message="memo.spec.ts:94:7 검색 및 카테고리 필터 동작" type="FAILURE">
+<![CDATA[  [chromium] › e2e\memo.spec.ts:94:7 › 메모 앱 주요 기능 › 검색 및 카테고리 필터 동작 ────────────────────────────────
+
+    TypeError: page.getByDisplayValue is not a function
+
+      119 |
+      120 |     // 카테고리 필터: work만
+    > 121 |     await page.getByDisplayValue('전체 카테고리').selectOption('work')
+          |                ^
+      122 |     await expect(page.getByRole('heading', { name: '업무 보고' })).toBeVisible()
+      123 |     await expect(page.getByRole('heading', { name: '고양이 일기' })).toHaveCount(0)
+      124 |   })
+        at C:\Users\masocampus\Desktop\memo-app\tests\e2e\memo.spec.ts:121:16
+
+    Error Context: ..\test-results\e2e-memo-메모-앱-주요-기능-검색-및-카테고리-필터-동작-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-memo-메모-앱-주요-기능-검색-및-카테고리-필터-동작-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="e2e\memo.spec.ts" timestamp="2025-10-29T06:26:43.955Z" hostname="firefox" tests="4" failures="4" skipped="0" time="65.738" errors="0">
+<testcase name="메모 앱 주요 기능 › 메모 생성 및 목록 표시, 새로고침 후에도 유지" classname="e2e\memo.spec.ts" time="30.888">
+<failure message="memo.spec.ts:9:7 메모 생성 및 목록 표시, 새로고침 후에도 유지" type="FAILURE">
+<![CDATA[  [firefox] › e2e\memo.spec.ts:9:7 › 메모 앱 주요 기능 › 메모 생성 및 목록 표시, 새로고침 후에도 유지 ───────────────────────
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: '테스트 메모' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByRole('heading', { name: '테스트 메모' })
+
+
+      32 |     // 새로고침 후에도 존재해야 함(로컬스토리지 저장 확인)
+      33 |     await page.reload()
+    > 34 |     await expect(page.getByRole('heading', { name: '테스트 메모' })).toBeVisible()
+         |                                                                 ^
+      35 |   })
+      36 |
+      37 |   test('상세 보기에서 편집 및 저장 반영', async ({ page }) => {
+        at C:\Users\masocampus\Desktop\memo-app\tests\e2e\memo.spec.ts:34:65
+
+    Error Context: ..\test-results\e2e-memo-메모-앱-주요-기능-메모-생성-및-목록-표시-새로고침-후에도-유지-firefox\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-memo-메모-앱-주요-기능-메모-생성-및-목록-표시-새로고침-후에도-유지-firefox\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="메모 앱 주요 기능 › 상세 보기에서 편집 및 저장 반영" classname="e2e\memo.spec.ts" time="12.961">
+<failure message="memo.spec.ts:37:7 상세 보기에서 편집 및 저장 반영" type="FAILURE">
+<![CDATA[  [firefox] › e2e\memo.spec.ts:37:7 › 메모 앱 주요 기능 › 상세 보기에서 편집 및 저장 반영 ──────────────────────────────
+
+    Error: locator.click: Error: strict mode violation: getByTitle('편집') resolved to 8 elements:
+        1) <button title="편집" class="p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">…</button> aka getByRole('button', { name: '편집' }).nth(1)
+        2) <button title="편집" class="p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">…</button> aka getByRole('button', { name: '편집' }).nth(2)
+        ...
+
+    Call log:
+      - waiting for getByTitle('편집')
+
+
+      50 |
+      51 |     // 편집 버튼 클릭 후 제목/내용 수정
+    > 52 |     await page.getByTitle('편집').click()
+         |                                 ^
+      53 |     const titleInput = page.getByPlaceholder('제목')
+      54 |     await titleInput.fill('편집된 제목')
+      55 |     const detailEditor = page.locator('.w-md-editor-text-input').first()
+        at C:\Users\masocampus\Desktop\memo-app\tests\e2e\memo.spec.ts:52:33
+
+    Error Context: ..\test-results\e2e-memo-메모-앱-주요-기능-상세-보기에서-편집-및-저장-반영-firefox\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-memo-메모-앱-주요-기능-상세-보기에서-편집-및-저장-반영-firefox\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="메모 앱 주요 기능 › 상세 보기에서 삭제 확인 다이얼로그 거쳐 삭제" classname="e2e\memo.spec.ts" time="9.243">
+<failure message="memo.spec.ts:72:7 상세 보기에서 삭제 확인 다이얼로그 거쳐 삭제" type="FAILURE">
+<![CDATA[  [firefox] › e2e\memo.spec.ts:72:7 › 메모 앱 주요 기능 › 상세 보기에서 삭제 확인 다이얼로그 거쳐 삭제 ───────────────────────
+
+    Error: locator.click: Error: strict mode violation: getByTitle('삭제') resolved to 8 elements:
+        1) <button title="삭제" class="p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">…</button> aka getByRole('button', { name: '삭제' }).nth(1)
+        2) <button title="삭제" class="p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">…</button> aka getByRole('button', { name: '삭제' }).nth(2)
+        ...
+
+    Call log:
+      - waiting for getByTitle('삭제')
+
+
+      85 |
+      86 |     // 삭제 버튼 -> 확인 다이얼로그 -> 삭제 버튼
+    > 87 |     await page.getByTitle('삭제').click()
+         |                                 ^
+      88 |     await page.getByRole('button', { name: '삭제' }).click()
+      89 |
+      90 |     // 모달이 닫히고 카드가 목록에서 사라졌는지 확인
+        at C:\Users\masocampus\Desktop\memo-app\tests\e2e\memo.spec.ts:87:33
+
+    Error Context: ..\test-results\e2e-memo-메모-앱-주요-기능-상세-보기에서-삭제-확인-다이얼로그-거쳐-삭제-firefox\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-memo-메모-앱-주요-기능-상세-보기에서-삭제-확인-다이얼로그-거쳐-삭제-firefox\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="메모 앱 주요 기능 › 검색 및 카테고리 필터 동작" classname="e2e\memo.spec.ts" time="12.646">
+<failure message="memo.spec.ts:94:7 검색 및 카테고리 필터 동작" type="FAILURE">
+<![CDATA[  [firefox] › e2e\memo.spec.ts:94:7 › 메모 앱 주요 기능 › 검색 및 카테고리 필터 동작 ─────────────────────────────────
+
+    TypeError: page.getByDisplayValue is not a function
+
+      119 |
+      120 |     // 카테고리 필터: work만
+    > 121 |     await page.getByDisplayValue('전체 카테고리').selectOption('work')
+          |                ^
+      122 |     await expect(page.getByRole('heading', { name: '업무 보고' })).toBeVisible()
+      123 |     await expect(page.getByRole('heading', { name: '고양이 일기' })).toHaveCount(0)
+      124 |   })
+        at C:\Users\masocampus\Desktop\memo-app\tests\e2e\memo.spec.ts:121:16
+
+    Error Context: ..\test-results\e2e-memo-메모-앱-주요-기능-검색-및-카테고리-필터-동작-firefox\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-memo-메모-앱-주요-기능-검색-및-카테고리-필터-동작-firefox\error-context.md]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="e2e\memo.spec.ts" timestamp="2025-10-29T06:26:43.955Z" hostname="webkit" tests="4" failures="4" skipped="0" time="47.471" errors="0">
+<testcase name="메모 앱 주요 기능 › 메모 생성 및 목록 표시, 새로고침 후에도 유지" classname="e2e\memo.spec.ts" time="16.994">
+<failure message="memo.spec.ts:9:7 메모 생성 및 목록 표시, 새로고침 후에도 유지" type="FAILURE">
+<![CDATA[  [webkit] › e2e\memo.spec.ts:9:7 › 메모 앱 주요 기능 › 메모 생성 및 목록 표시, 새로고침 후에도 유지 ────────────────────────
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { name: '테스트 메모' })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByRole('heading', { name: '테스트 메모' })
+
+
+      32 |     // 새로고침 후에도 존재해야 함(로컬스토리지 저장 확인)
+      33 |     await page.reload()
+    > 34 |     await expect(page.getByRole('heading', { name: '테스트 메모' })).toBeVisible()
+         |                                                                 ^
+      35 |   })
+      36 |
+      37 |   test('상세 보기에서 편집 및 저장 반영', async ({ page }) => {
+        at C:\Users\masocampus\Desktop\memo-app\tests\e2e\memo.spec.ts:34:65
+
+    Error Context: ..\test-results\e2e-memo-메모-앱-주요-기능-메모-생성-및-목록-표시-새로고침-후에도-유지-webkit\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-memo-메모-앱-주요-기능-메모-생성-및-목록-표시-새로고침-후에도-유지-webkit\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="메모 앱 주요 기능 › 상세 보기에서 편집 및 저장 반영" classname="e2e\memo.spec.ts" time="9.252">
+<failure message="memo.spec.ts:37:7 상세 보기에서 편집 및 저장 반영" type="FAILURE">
+<![CDATA[  [webkit] › e2e\memo.spec.ts:37:7 › 메모 앱 주요 기능 › 상세 보기에서 편집 및 저장 반영 ───────────────────────────────
+
+    Error: locator.click: Error: strict mode violation: getByTitle('편집') resolved to 8 elements:
+        1) <button title="편집" class="p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">…</button> aka getByRole('button', { name: '편집' }).nth(1)
+        2) <button title="편집" class="p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">…</button> aka getByRole('button', { name: '편집' }).nth(2)
+        3) <button title="편집" class="p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">…</button> aka getByRole('button', { name: '편집' }).nth(3)
+        4) <button title="편집" class="p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">…</button> aka getByRole('button', { name: '편집' }).nth(4)
+        5) <button title="편집" class="p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">…</button> aka getByRole('button', { name: '편집' }).nth(5)
+        6) <button title="편집" class="p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">…</button> aka getByRole('button', { name: '편집', exact: true }).nth(5)
+        7) <button title="편집" class="p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">…</button> aka locator('div:nth-child(7) > .flex.justify-between > .flex.gap-2.ml-4 > .p-2.text-gray-500.hover\\:text-blue-600')
+        8) <button title="편집" class="p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">…</button> aka locator('.flex.justify-between.items-start.mb-4 > .flex.gap-2.ml-4 > .p-2.text-gray-500.hover\\:text-blue-600')
+
+    Call log:
+      - waiting for getByTitle('편집')
+
+
+      50 |
+      51 |     // 편집 버튼 클릭 후 제목/내용 수정
+    > 52 |     await page.getByTitle('편집').click()
+         |                                 ^
+      53 |     const titleInput = page.getByPlaceholder('제목')
+      54 |     await titleInput.fill('편집된 제목')
+      55 |     const detailEditor = page.locator('.w-md-editor-text-input').first()
+        at C:\Users\masocampus\Desktop\memo-app\tests\e2e\memo.spec.ts:52:33
+
+    Error Context: ..\test-results\e2e-memo-메모-앱-주요-기능-상세-보기에서-편집-및-저장-반영-webkit\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-memo-메모-앱-주요-기능-상세-보기에서-편집-및-저장-반영-webkit\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="메모 앱 주요 기능 › 상세 보기에서 삭제 확인 다이얼로그 거쳐 삭제" classname="e2e\memo.spec.ts" time="11.567">
+<failure message="memo.spec.ts:72:7 상세 보기에서 삭제 확인 다이얼로그 거쳐 삭제" type="FAILURE">
+<![CDATA[  [webkit] › e2e\memo.spec.ts:72:7 › 메모 앱 주요 기능 › 상세 보기에서 삭제 확인 다이얼로그 거쳐 삭제 ────────────────────────
+
+    Error: locator.click: Error: strict mode violation: getByTitle('삭제') resolved to 8 elements:
+        1) <button title="삭제" class="p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">…</button> aka getByRole('button', { name: '삭제' }).nth(1)
+        2) <button title="삭제" class="p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">…</button> aka getByRole('button', { name: '삭제' }).nth(2)
+        3) <button title="삭제" class="p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">…</button> aka getByRole('button', { name: '삭제' }).nth(3)
+        4) <button title="삭제" class="p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">…</button> aka getByRole('button', { name: '삭제' }).nth(4)
+        5) <button title="삭제" class="p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">…</button> aka getByRole('button', { name: '삭제' }).nth(5)
+        6) <button title="삭제" class="p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">…</button> aka getByRole('button', { name: '삭제', exact: true }).nth(5)
+        7) <button title="삭제" class="p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">…</button> aka locator('div:nth-child(7) > .flex.justify-between > .flex.gap-2.ml-4 > .p-2.text-gray-500.hover\\:text-red-600')
+        8) <button title="삭제" class="p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">…</button> aka locator('.flex.justify-between.items-start.mb-4 > .flex.gap-2.ml-4 > .p-2.text-gray-500.hover\\:text-red-600')
+
+    Call log:
+      - waiting for getByTitle('삭제')
+
+
+      85 |
+      86 |     // 삭제 버튼 -> 확인 다이얼로그 -> 삭제 버튼
+    > 87 |     await page.getByTitle('삭제').click()
+         |                                 ^
+      88 |     await page.getByRole('button', { name: '삭제' }).click()
+      89 |
+      90 |     // 모달이 닫히고 카드가 목록에서 사라졌는지 확인
+        at C:\Users\masocampus\Desktop\memo-app\tests\e2e\memo.spec.ts:87:33
+
+    Error Context: ..\test-results\e2e-memo-메모-앱-주요-기능-상세-보기에서-삭제-확인-다이얼로그-거쳐-삭제-webkit\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-memo-메모-앱-주요-기능-상세-보기에서-삭제-확인-다이얼로그-거쳐-삭제-webkit\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="메모 앱 주요 기능 › 검색 및 카테고리 필터 동작" classname="e2e\memo.spec.ts" time="9.658">
+<failure message="memo.spec.ts:94:7 검색 및 카테고리 필터 동작" type="FAILURE">
+<![CDATA[  [webkit] › e2e\memo.spec.ts:94:7 › 메모 앱 주요 기능 › 검색 및 카테고리 필터 동작 ──────────────────────────────────
+
+    TypeError: page.getByDisplayValue is not a function
+
+      119 |
+      120 |     // 카테고리 필터: work만
+    > 121 |     await page.getByDisplayValue('전체 카테고리').selectOption('work')
+          |                ^
+      122 |     await expect(page.getByRole('heading', { name: '업무 보고' })).toBeVisible()
+      123 |     await expect(page.getByRole('heading', { name: '고양이 일기' })).toHaveCount(0)
+      124 |   })
+        at C:\Users\masocampus\Desktop\memo-app\tests\e2e\memo.spec.ts:121:16
+
+    Error Context: ..\test-results\e2e-memo-메모-앱-주요-기능-검색-및-카테고리-필터-동작-webkit\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-memo-메모-앱-주요-기능-검색-및-카테고리-필터-동작-webkit\error-context.md]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

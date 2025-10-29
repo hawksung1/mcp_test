@@ -1,0 +1,897 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\masocampus\\Desktop\\memo-app\\playwright.config.ts",
+    "rootDir": "C:/Users/masocampus/Desktop/memo-app/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "test-results/results.xml"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "C:/Users/masocampus/Desktop/memo-app/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Users/masocampus/Desktop/memo-app/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/masocampus/Desktop/memo-app/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "C:/Users/masocampus/Desktop/memo-app/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/masocampus/Desktop/memo-app/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "C:/Users/masocampus/Desktop/memo-app/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 2,
+    "webServer": {
+      "command": "npm run dev",
+      "url": "http://localhost:3000",
+      "reuseExistingServer": true
+    }
+  },
+  "suites": [
+    {
+      "title": "e2e\\memo.spec.ts",
+      "file": "e2e/memo.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "메모 앱 주요 기능",
+          "file": "e2e/memo.spec.ts",
+          "line": 8,
+          "column": 6,
+          "specs": [
+            {
+              "title": "메모 생성 및 목록 표시, 새로고침 후에도 유지",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 13733,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: '테스트 메모' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: '테스트 메모' })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: '테스트 메모' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: '테스트 메모' })\u001b[22m\n\n    at C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts:30:65",
+                        "location": {
+                          "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts",
+                          "column": 65,
+                          "line": 30
+                        },
+                        "snippet": "  28 |\n  29 |     // 카드 목록에서 제목이 보이는지 확인\n> 30 |     await expect(page.getByRole('heading', { name: '테스트 메모' })).toBeVisible()\n     |                                                                 ^\n  31 |\n  32 |     // 새로고침 후에도 존재해야 함(로컬스토리지 저장 확인)\n  33 |     await page.reload()"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts",
+                            "column": 65,
+                            "line": 30
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: '테스트 메모' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: '테스트 메모' })\u001b[22m\n\n\n  28 |\n  29 |     // 카드 목록에서 제목이 보이는지 확인\n> 30 |     await expect(page.getByRole('heading', { name: '테스트 메모' })).toBeVisible()\n     |                                                                 ^\n  31 |\n  32 |     // 새로고침 후에도 존재해야 함(로컬스토리지 저장 확인)\n  33 |     await page.reload()\n    at C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts:30:65"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-29T06:26:46.283Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\Desktop\\memo-app\\test-results\\e2e-memo-메모-앱-주요-기능-메모-생성-및-목록-표시-새로고침-후에도-유지-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts",
+                        "column": 65,
+                        "line": 30
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c63b86ea463b987895eb-a9fd18a861d89b36ece5",
+              "file": "e2e/memo.spec.ts",
+              "line": 9,
+              "column": 7
+            },
+            {
+              "title": "상세 보기에서 편집 및 저장 반영",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 9130,
+                      "error": {
+                        "message": "Error: locator.click: Error: strict mode violation: getByTitle('편집') resolved to 8 elements:\n    1) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집' }).nth(1)\n    2) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집' }).nth(2)\n    3) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집' }).nth(3)\n    4) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집' }).nth(4)\n    5) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집' }).nth(5)\n    6) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집', exact: true }).nth(5)\n    7) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka locator('div:nth-child(7) > .flex.justify-between > .flex.gap-2.ml-4 > .p-2.text-gray-500.hover\\\\:text-blue-600')\n    8) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka locator('.flex.justify-between.items-start.mb-4 > .flex.gap-2.ml-4 > .p-2.text-gray-500.hover\\\\:text-blue-600')\n\nCall log:\n\u001b[2m  - waiting for getByTitle('편집')\u001b[22m\n",
+                        "stack": "Error: locator.click: Error: strict mode violation: getByTitle('편집') resolved to 8 elements:\n    1) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집' }).nth(1)\n    2) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집' }).nth(2)\n    3) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집' }).nth(3)\n    4) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집' }).nth(4)\n    5) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집' }).nth(5)\n    6) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집', exact: true }).nth(5)\n    7) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka locator('div:nth-child(7) > .flex.justify-between > .flex.gap-2.ml-4 > .p-2.text-gray-500.hover\\\\:text-blue-600')\n    8) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka locator('.flex.justify-between.items-start.mb-4 > .flex.gap-2.ml-4 > .p-2.text-gray-500.hover\\\\:text-blue-600')\n\nCall log:\n\u001b[2m  - waiting for getByTitle('편집')\u001b[22m\n\n    at C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts:52:33",
+                        "location": {
+                          "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts",
+                          "column": 33,
+                          "line": 52
+                        },
+                        "snippet": "  50 |\n  51 |     // 편집 버튼 클릭 후 제목/내용 수정\n> 52 |     await page.getByTitle('편집').click()\n     |                                 ^\n  53 |     const titleInput = page.getByPlaceholder('제목')\n  54 |     await titleInput.fill('편집된 제목')\n  55 |     const detailEditor = page.locator('.w-md-editor-text-input').first()"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts",
+                            "column": 33,
+                            "line": 52
+                          },
+                          "message": "Error: locator.click: Error: strict mode violation: getByTitle('편집') resolved to 8 elements:\n    1) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집' }).nth(1)\n    2) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집' }).nth(2)\n    3) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집' }).nth(3)\n    4) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집' }).nth(4)\n    5) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집' }).nth(5)\n    6) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집', exact: true }).nth(5)\n    7) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka locator('div:nth-child(7) > .flex.justify-between > .flex.gap-2.ml-4 > .p-2.text-gray-500.hover\\\\:text-blue-600')\n    8) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka locator('.flex.justify-between.items-start.mb-4 > .flex.gap-2.ml-4 > .p-2.text-gray-500.hover\\\\:text-blue-600')\n\nCall log:\n\u001b[2m  - waiting for getByTitle('편집')\u001b[22m\n\n\n  50 |\n  51 |     // 편집 버튼 클릭 후 제목/내용 수정\n> 52 |     await page.getByTitle('편집').click()\n     |                                 ^\n  53 |     const titleInput = page.getByPlaceholder('제목')\n  54 |     await titleInput.fill('편집된 제목')\n  55 |     const detailEditor = page.locator('.w-md-editor-text-input').first()\n    at C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts:52:33"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-29T06:26:46.243Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\Desktop\\memo-app\\test-results\\e2e-memo-메모-앱-주요-기능-상세-보기에서-편집-및-저장-반영-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts",
+                        "column": 33,
+                        "line": 52
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c63b86ea463b987895eb-0fe51755fd4c62694f7d",
+              "file": "e2e/memo.spec.ts",
+              "line": 37,
+              "column": 7
+            },
+            {
+              "title": "상세 보기에서 삭제 확인 다이얼로그 거쳐 삭제",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 5302,
+                      "error": {
+                        "message": "Error: locator.click: Error: strict mode violation: getByTitle('삭제') resolved to 8 elements:\n    1) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제' }).nth(1)\n    2) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제' }).nth(2)\n    3) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제' }).nth(3)\n    4) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제' }).nth(4)\n    5) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제' }).nth(5)\n    6) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제', exact: true }).nth(5)\n    7) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka locator('div:nth-child(7) > .flex.justify-between > .flex.gap-2.ml-4 > .p-2.text-gray-500.hover\\\\:text-red-600')\n    8) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka locator('.flex.justify-between.items-start.mb-4 > .flex.gap-2.ml-4 > .p-2.text-gray-500.hover\\\\:text-red-600')\n\nCall log:\n\u001b[2m  - waiting for getByTitle('삭제')\u001b[22m\n",
+                        "stack": "Error: locator.click: Error: strict mode violation: getByTitle('삭제') resolved to 8 elements:\n    1) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제' }).nth(1)\n    2) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제' }).nth(2)\n    3) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제' }).nth(3)\n    4) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제' }).nth(4)\n    5) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제' }).nth(5)\n    6) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제', exact: true }).nth(5)\n    7) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka locator('div:nth-child(7) > .flex.justify-between > .flex.gap-2.ml-4 > .p-2.text-gray-500.hover\\\\:text-red-600')\n    8) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka locator('.flex.justify-between.items-start.mb-4 > .flex.gap-2.ml-4 > .p-2.text-gray-500.hover\\\\:text-red-600')\n\nCall log:\n\u001b[2m  - waiting for getByTitle('삭제')\u001b[22m\n\n    at C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts:87:33",
+                        "location": {
+                          "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts",
+                          "column": 33,
+                          "line": 87
+                        },
+                        "snippet": "  85 |\n  86 |     // 삭제 버튼 -> 확인 다이얼로그 -> 삭제 버튼\n> 87 |     await page.getByTitle('삭제').click()\n     |                                 ^\n  88 |     await page.getByRole('button', { name: '삭제' }).click()\n  89 |\n  90 |     // 모달이 닫히고 카드가 목록에서 사라졌는지 확인"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts",
+                            "column": 33,
+                            "line": 87
+                          },
+                          "message": "Error: locator.click: Error: strict mode violation: getByTitle('삭제') resolved to 8 elements:\n    1) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제' }).nth(1)\n    2) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제' }).nth(2)\n    3) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제' }).nth(3)\n    4) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제' }).nth(4)\n    5) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제' }).nth(5)\n    6) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제', exact: true }).nth(5)\n    7) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka locator('div:nth-child(7) > .flex.justify-between > .flex.gap-2.ml-4 > .p-2.text-gray-500.hover\\\\:text-red-600')\n    8) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka locator('.flex.justify-between.items-start.mb-4 > .flex.gap-2.ml-4 > .p-2.text-gray-500.hover\\\\:text-red-600')\n\nCall log:\n\u001b[2m  - waiting for getByTitle('삭제')\u001b[22m\n\n\n  85 |\n  86 |     // 삭제 버튼 -> 확인 다이얼로그 -> 삭제 버튼\n> 87 |     await page.getByTitle('삭제').click()\n     |                                 ^\n  88 |     await page.getByRole('button', { name: '삭제' }).click()\n  89 |\n  90 |     // 모달이 닫히고 카드가 목록에서 사라졌는지 확인\n    at C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts:87:33"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-29T06:27:00.209Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\Desktop\\memo-app\\test-results\\e2e-memo-메모-앱-주요-기능-상세-보기에서-삭제-확인-다이얼로그-거쳐-삭제-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts",
+                        "column": 33,
+                        "line": 87
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c63b86ea463b987895eb-290c5618cbf1b41fbfcf",
+              "file": "e2e/memo.spec.ts",
+              "line": 72,
+              "column": 7
+            },
+            {
+              "title": "검색 및 카테고리 필터 동작",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 4571,
+                      "error": {
+                        "message": "TypeError: page.getByDisplayValue is not a function",
+                        "stack": "TypeError: page.getByDisplayValue is not a function\n    at C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts:121:16",
+                        "location": {
+                          "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts",
+                          "column": 16,
+                          "line": 121
+                        },
+                        "snippet": "  119 |\n  120 |     // 카테고리 필터: work만\n> 121 |     await page.getByDisplayValue('전체 카테고리').selectOption('work')\n      |                ^\n  122 |     await expect(page.getByRole('heading', { name: '업무 보고' })).toBeVisible()\n  123 |     await expect(page.getByRole('heading', { name: '고양이 일기' })).toHaveCount(0)\n  124 |   })"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts",
+                            "column": 16,
+                            "line": 121
+                          },
+                          "message": "TypeError: page.getByDisplayValue is not a function\n\n  119 |\n  120 |     // 카테고리 필터: work만\n> 121 |     await page.getByDisplayValue('전체 카테고리').selectOption('work')\n      |                ^\n  122 |     await expect(page.getByRole('heading', { name: '업무 보고' })).toBeVisible()\n  123 |     await expect(page.getByRole('heading', { name: '고양이 일기' })).toHaveCount(0)\n  124 |   })\n    at C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts:121:16"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-29T06:27:05.541Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\Desktop\\memo-app\\test-results\\e2e-memo-메모-앱-주요-기능-검색-및-카테고리-필터-동작-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts",
+                        "column": 16,
+                        "line": 121
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c63b86ea463b987895eb-d9531e0f0a3f6f89bc50",
+              "file": "e2e/memo.spec.ts",
+              "line": 94,
+              "column": 7
+            },
+            {
+              "title": "메모 생성 및 목록 표시, 새로고침 후에도 유지",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 30888,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: '테스트 메모' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: '테스트 메모' })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: '테스트 메모' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: '테스트 메모' })\u001b[22m\n\n    at C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts:34:65",
+                        "location": {
+                          "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts",
+                          "column": 65,
+                          "line": 34
+                        },
+                        "snippet": "  32 |     // 새로고침 후에도 존재해야 함(로컬스토리지 저장 확인)\n  33 |     await page.reload()\n> 34 |     await expect(page.getByRole('heading', { name: '테스트 메모' })).toBeVisible()\n     |                                                                 ^\n  35 |   })\n  36 |\n  37 |   test('상세 보기에서 편집 및 저장 반영', async ({ page }) => {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts",
+                            "column": 65,
+                            "line": 34
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: '테스트 메모' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: '테스트 메모' })\u001b[22m\n\n\n  32 |     // 새로고침 후에도 존재해야 함(로컬스토리지 저장 확인)\n  33 |     await page.reload()\n> 34 |     await expect(page.getByRole('heading', { name: '테스트 메모' })).toBeVisible()\n     |                                                                 ^\n  35 |   })\n  36 |\n  37 |   test('상세 보기에서 편집 및 저장 반영', async ({ page }) => {\n    at C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts:34:65"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-29T06:27:12.069Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\Desktop\\memo-app\\test-results\\e2e-memo-메모-앱-주요-기능-메모-생성-및-목록-표시-새로고침-후에도-유지-firefox\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts",
+                        "column": 65,
+                        "line": 34
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c63b86ea463b987895eb-f0c59a32fdc55b2ae61c",
+              "file": "e2e/memo.spec.ts",
+              "line": 9,
+              "column": 7
+            },
+            {
+              "title": "상세 보기에서 편집 및 저장 반영",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 12961,
+                      "error": {
+                        "message": "Error: locator.click: Error: strict mode violation: getByTitle('편집') resolved to 8 elements:\n    1) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집' }).nth(1)\n    2) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집' }).nth(2)\n    ...\n\nCall log:\n\u001b[2m  - waiting for getByTitle('편집')\u001b[22m\n",
+                        "stack": "Error: locator.click: Error: strict mode violation: getByTitle('편집') resolved to 8 elements:\n    1) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집' }).nth(1)\n    2) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집' }).nth(2)\n    ...\n\nCall log:\n\u001b[2m  - waiting for getByTitle('편집')\u001b[22m\n\n    at C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts:52:33",
+                        "location": {
+                          "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts",
+                          "column": 33,
+                          "line": 52
+                        },
+                        "snippet": "  50 |\n  51 |     // 편집 버튼 클릭 후 제목/내용 수정\n> 52 |     await page.getByTitle('편집').click()\n     |                                 ^\n  53 |     const titleInput = page.getByPlaceholder('제목')\n  54 |     await titleInput.fill('편집된 제목')\n  55 |     const detailEditor = page.locator('.w-md-editor-text-input').first()"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts",
+                            "column": 33,
+                            "line": 52
+                          },
+                          "message": "Error: locator.click: Error: strict mode violation: getByTitle('편집') resolved to 8 elements:\n    1) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집' }).nth(1)\n    2) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집' }).nth(2)\n    ...\n\nCall log:\n\u001b[2m  - waiting for getByTitle('편집')\u001b[22m\n\n\n  50 |\n  51 |     // 편집 버튼 클릭 후 제목/내용 수정\n> 52 |     await page.getByTitle('편집').click()\n     |                                 ^\n  53 |     const titleInput = page.getByPlaceholder('제목')\n  54 |     await titleInput.fill('편집된 제목')\n  55 |     const detailEditor = page.locator('.w-md-editor-text-input').first()\n    at C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts:52:33"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-29T06:27:13.728Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\Desktop\\memo-app\\test-results\\e2e-memo-메모-앱-주요-기능-상세-보기에서-편집-및-저장-반영-firefox\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts",
+                        "column": 33,
+                        "line": 52
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c63b86ea463b987895eb-3d6180f2cfd0674b884b",
+              "file": "e2e/memo.spec.ts",
+              "line": 37,
+              "column": 7
+            },
+            {
+              "title": "상세 보기에서 삭제 확인 다이얼로그 거쳐 삭제",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 9243,
+                      "error": {
+                        "message": "Error: locator.click: Error: strict mode violation: getByTitle('삭제') resolved to 8 elements:\n    1) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제' }).nth(1)\n    2) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제' }).nth(2)\n    ...\n\nCall log:\n\u001b[2m  - waiting for getByTitle('삭제')\u001b[22m\n",
+                        "stack": "Error: locator.click: Error: strict mode violation: getByTitle('삭제') resolved to 8 elements:\n    1) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제' }).nth(1)\n    2) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제' }).nth(2)\n    ...\n\nCall log:\n\u001b[2m  - waiting for getByTitle('삭제')\u001b[22m\n\n    at C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts:87:33",
+                        "location": {
+                          "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts",
+                          "column": 33,
+                          "line": 87
+                        },
+                        "snippet": "  85 |\n  86 |     // 삭제 버튼 -> 확인 다이얼로그 -> 삭제 버튼\n> 87 |     await page.getByTitle('삭제').click()\n     |                                 ^\n  88 |     await page.getByRole('button', { name: '삭제' }).click()\n  89 |\n  90 |     // 모달이 닫히고 카드가 목록에서 사라졌는지 확인"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts",
+                            "column": 33,
+                            "line": 87
+                          },
+                          "message": "Error: locator.click: Error: strict mode violation: getByTitle('삭제') resolved to 8 elements:\n    1) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제' }).nth(1)\n    2) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제' }).nth(2)\n    ...\n\nCall log:\n\u001b[2m  - waiting for getByTitle('삭제')\u001b[22m\n\n\n  85 |\n  86 |     // 삭제 버튼 -> 확인 다이얼로그 -> 삭제 버튼\n> 87 |     await page.getByTitle('삭제').click()\n     |                                 ^\n  88 |     await page.getByRole('button', { name: '삭제' }).click()\n  89 |\n  90 |     // 모달이 닫히고 카드가 목록에서 사라졌는지 확인\n    at C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts:87:33"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-29T06:27:36.593Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\Desktop\\memo-app\\test-results\\e2e-memo-메모-앱-주요-기능-상세-보기에서-삭제-확인-다이얼로그-거쳐-삭제-firefox\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts",
+                        "column": 33,
+                        "line": 87
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c63b86ea463b987895eb-aef59e7721db4c06a44c",
+              "file": "e2e/memo.spec.ts",
+              "line": 72,
+              "column": 7
+            },
+            {
+              "title": "검색 및 카테고리 필터 동작",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 12646,
+                      "error": {
+                        "message": "TypeError: page.getByDisplayValue is not a function",
+                        "stack": "TypeError: page.getByDisplayValue is not a function\n    at C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts:121:16",
+                        "location": {
+                          "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts",
+                          "column": 16,
+                          "line": 121
+                        },
+                        "snippet": "  119 |\n  120 |     // 카테고리 필터: work만\n> 121 |     await page.getByDisplayValue('전체 카테고리').selectOption('work')\n      |                ^\n  122 |     await expect(page.getByRole('heading', { name: '업무 보고' })).toBeVisible()\n  123 |     await expect(page.getByRole('heading', { name: '고양이 일기' })).toHaveCount(0)\n  124 |   })"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts",
+                            "column": 16,
+                            "line": 121
+                          },
+                          "message": "TypeError: page.getByDisplayValue is not a function\n\n  119 |\n  120 |     // 카테고리 필터: work만\n> 121 |     await page.getByDisplayValue('전체 카테고리').selectOption('work')\n      |                ^\n  122 |     await expect(page.getByRole('heading', { name: '업무 보고' })).toBeVisible()\n  123 |     await expect(page.getByRole('heading', { name: '고양이 일기' })).toHaveCount(0)\n  124 |   })\n    at C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts:121:16"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-29T06:27:50.686Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\Desktop\\memo-app\\test-results\\e2e-memo-메모-앱-주요-기능-검색-및-카테고리-필터-동작-firefox\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts",
+                        "column": 16,
+                        "line": 121
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c63b86ea463b987895eb-0a8b9db76039cc4365ac",
+              "file": "e2e/memo.spec.ts",
+              "line": 94,
+              "column": 7
+            },
+            {
+              "title": "메모 생성 및 목록 표시, 새로고침 후에도 유지",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 16994,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: '테스트 메모' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: '테스트 메모' })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: '테스트 메모' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: '테스트 메모' })\u001b[22m\n\n    at C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts:34:65",
+                        "location": {
+                          "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts",
+                          "column": 65,
+                          "line": 34
+                        },
+                        "snippet": "  32 |     // 새로고침 후에도 존재해야 함(로컬스토리지 저장 확인)\n  33 |     await page.reload()\n> 34 |     await expect(page.getByRole('heading', { name: '테스트 메모' })).toBeVisible()\n     |                                                                 ^\n  35 |   })\n  36 |\n  37 |   test('상세 보기에서 편집 및 저장 반영', async ({ page }) => {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts",
+                            "column": 65,
+                            "line": 34
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('heading', { name: '테스트 메모' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: '테스트 메모' })\u001b[22m\n\n\n  32 |     // 새로고침 후에도 존재해야 함(로컬스토리지 저장 확인)\n  33 |     await page.reload()\n> 34 |     await expect(page.getByRole('heading', { name: '테스트 메모' })).toBeVisible()\n     |                                                                 ^\n  35 |   })\n  36 |\n  37 |   test('상세 보기에서 편집 및 저장 반영', async ({ page }) => {\n    at C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts:34:65"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-29T06:27:55.549Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\Desktop\\memo-app\\test-results\\e2e-memo-메모-앱-주요-기능-메모-생성-및-목록-표시-새로고침-후에도-유지-webkit\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts",
+                        "column": 65,
+                        "line": 34
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c63b86ea463b987895eb-60e0dfe2f063a6091b05",
+              "file": "e2e/memo.spec.ts",
+              "line": 9,
+              "column": 7
+            },
+            {
+              "title": "상세 보기에서 편집 및 저장 반영",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 9252,
+                      "error": {
+                        "message": "Error: locator.click: Error: strict mode violation: getByTitle('편집') resolved to 8 elements:\n    1) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집' }).nth(1)\n    2) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집' }).nth(2)\n    3) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집' }).nth(3)\n    4) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집' }).nth(4)\n    5) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집' }).nth(5)\n    6) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집', exact: true }).nth(5)\n    7) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka locator('div:nth-child(7) > .flex.justify-between > .flex.gap-2.ml-4 > .p-2.text-gray-500.hover\\\\:text-blue-600')\n    8) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka locator('.flex.justify-between.items-start.mb-4 > .flex.gap-2.ml-4 > .p-2.text-gray-500.hover\\\\:text-blue-600')\n\nCall log:\n\u001b[2m  - waiting for getByTitle('편집')\u001b[22m\n",
+                        "stack": "Error: locator.click: Error: strict mode violation: getByTitle('편집') resolved to 8 elements:\n    1) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집' }).nth(1)\n    2) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집' }).nth(2)\n    3) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집' }).nth(3)\n    4) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집' }).nth(4)\n    5) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집' }).nth(5)\n    6) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집', exact: true }).nth(5)\n    7) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka locator('div:nth-child(7) > .flex.justify-between > .flex.gap-2.ml-4 > .p-2.text-gray-500.hover\\\\:text-blue-600')\n    8) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka locator('.flex.justify-between.items-start.mb-4 > .flex.gap-2.ml-4 > .p-2.text-gray-500.hover\\\\:text-blue-600')\n\nCall log:\n\u001b[2m  - waiting for getByTitle('편집')\u001b[22m\n\n    at C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts:52:33",
+                        "location": {
+                          "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts",
+                          "column": 33,
+                          "line": 52
+                        },
+                        "snippet": "  50 |\n  51 |     // 편집 버튼 클릭 후 제목/내용 수정\n> 52 |     await page.getByTitle('편집').click()\n     |                                 ^\n  53 |     const titleInput = page.getByPlaceholder('제목')\n  54 |     await titleInput.fill('편집된 제목')\n  55 |     const detailEditor = page.locator('.w-md-editor-text-input').first()"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts",
+                            "column": 33,
+                            "line": 52
+                          },
+                          "message": "Error: locator.click: Error: strict mode violation: getByTitle('편집') resolved to 8 elements:\n    1) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집' }).nth(1)\n    2) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집' }).nth(2)\n    3) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집' }).nth(3)\n    4) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집' }).nth(4)\n    5) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집' }).nth(5)\n    6) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '편집', exact: true }).nth(5)\n    7) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka locator('div:nth-child(7) > .flex.justify-between > .flex.gap-2.ml-4 > .p-2.text-gray-500.hover\\\\:text-blue-600')\n    8) <button title=\"편집\" class=\"p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors\">…</button> aka locator('.flex.justify-between.items-start.mb-4 > .flex.gap-2.ml-4 > .p-2.text-gray-500.hover\\\\:text-blue-600')\n\nCall log:\n\u001b[2m  - waiting for getByTitle('편집')\u001b[22m\n\n\n  50 |\n  51 |     // 편집 버튼 클릭 후 제목/내용 수정\n> 52 |     await page.getByTitle('편집').click()\n     |                                 ^\n  53 |     const titleInput = page.getByPlaceholder('제목')\n  54 |     await titleInput.fill('편집된 제목')\n  55 |     const detailEditor = page.locator('.w-md-editor-text-input').first()\n    at C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts:52:33"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-29T06:28:08.661Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\Desktop\\memo-app\\test-results\\e2e-memo-메모-앱-주요-기능-상세-보기에서-편집-및-저장-반영-webkit\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts",
+                        "column": 33,
+                        "line": 52
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c63b86ea463b987895eb-614a479f821222dc488f",
+              "file": "e2e/memo.spec.ts",
+              "line": 37,
+              "column": 7
+            },
+            {
+              "title": "상세 보기에서 삭제 확인 다이얼로그 거쳐 삭제",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 11567,
+                      "error": {
+                        "message": "Error: locator.click: Error: strict mode violation: getByTitle('삭제') resolved to 8 elements:\n    1) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제' }).nth(1)\n    2) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제' }).nth(2)\n    3) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제' }).nth(3)\n    4) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제' }).nth(4)\n    5) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제' }).nth(5)\n    6) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제', exact: true }).nth(5)\n    7) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka locator('div:nth-child(7) > .flex.justify-between > .flex.gap-2.ml-4 > .p-2.text-gray-500.hover\\\\:text-red-600')\n    8) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka locator('.flex.justify-between.items-start.mb-4 > .flex.gap-2.ml-4 > .p-2.text-gray-500.hover\\\\:text-red-600')\n\nCall log:\n\u001b[2m  - waiting for getByTitle('삭제')\u001b[22m\n",
+                        "stack": "Error: locator.click: Error: strict mode violation: getByTitle('삭제') resolved to 8 elements:\n    1) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제' }).nth(1)\n    2) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제' }).nth(2)\n    3) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제' }).nth(3)\n    4) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제' }).nth(4)\n    5) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제' }).nth(5)\n    6) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제', exact: true }).nth(5)\n    7) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka locator('div:nth-child(7) > .flex.justify-between > .flex.gap-2.ml-4 > .p-2.text-gray-500.hover\\\\:text-red-600')\n    8) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka locator('.flex.justify-between.items-start.mb-4 > .flex.gap-2.ml-4 > .p-2.text-gray-500.hover\\\\:text-red-600')\n\nCall log:\n\u001b[2m  - waiting for getByTitle('삭제')\u001b[22m\n\n    at C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts:87:33",
+                        "location": {
+                          "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts",
+                          "column": 33,
+                          "line": 87
+                        },
+                        "snippet": "  85 |\n  86 |     // 삭제 버튼 -> 확인 다이얼로그 -> 삭제 버튼\n> 87 |     await page.getByTitle('삭제').click()\n     |                                 ^\n  88 |     await page.getByRole('button', { name: '삭제' }).click()\n  89 |\n  90 |     // 모달이 닫히고 카드가 목록에서 사라졌는지 확인"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts",
+                            "column": 33,
+                            "line": 87
+                          },
+                          "message": "Error: locator.click: Error: strict mode violation: getByTitle('삭제') resolved to 8 elements:\n    1) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제' }).nth(1)\n    2) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제' }).nth(2)\n    3) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제' }).nth(3)\n    4) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제' }).nth(4)\n    5) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제' }).nth(5)\n    6) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka getByRole('button', { name: '삭제', exact: true }).nth(5)\n    7) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka locator('div:nth-child(7) > .flex.justify-between > .flex.gap-2.ml-4 > .p-2.text-gray-500.hover\\\\:text-red-600')\n    8) <button title=\"삭제\" class=\"p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors\">…</button> aka locator('.flex.justify-between.items-start.mb-4 > .flex.gap-2.ml-4 > .p-2.text-gray-500.hover\\\\:text-red-600')\n\nCall log:\n\u001b[2m  - waiting for getByTitle('삭제')\u001b[22m\n\n\n  85 |\n  86 |     // 삭제 버튼 -> 확인 다이얼로그 -> 삭제 버튼\n> 87 |     await page.getByTitle('삭제').click()\n     |                                 ^\n  88 |     await page.getByRole('button', { name: '삭제' }).click()\n  89 |\n  90 |     // 모달이 닫히고 카드가 목록에서 사라졌는지 확인\n    at C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts:87:33"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-29T06:28:16.275Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\Desktop\\memo-app\\test-results\\e2e-memo-메모-앱-주요-기능-상세-보기에서-삭제-확인-다이얼로그-거쳐-삭제-webkit\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts",
+                        "column": 33,
+                        "line": 87
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c63b86ea463b987895eb-3e9eab69177d786a2aed",
+              "file": "e2e/memo.spec.ts",
+              "line": 72,
+              "column": 7
+            },
+            {
+              "title": "검색 및 카테고리 필터 동작",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 9658,
+                      "error": {
+                        "message": "TypeError: page.getByDisplayValue is not a function",
+                        "stack": "TypeError: page.getByDisplayValue is not a function\n    at C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts:121:16",
+                        "location": {
+                          "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts",
+                          "column": 16,
+                          "line": 121
+                        },
+                        "snippet": "  119 |\n  120 |     // 카테고리 필터: work만\n> 121 |     await page.getByDisplayValue('전체 카테고리').selectOption('work')\n      |                ^\n  122 |     await expect(page.getByRole('heading', { name: '업무 보고' })).toBeVisible()\n  123 |     await expect(page.getByRole('heading', { name: '고양이 일기' })).toHaveCount(0)\n  124 |   })"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts",
+                            "column": 16,
+                            "line": 121
+                          },
+                          "message": "TypeError: page.getByDisplayValue is not a function\n\n  119 |\n  120 |     // 카테고리 필터: work만\n> 121 |     await page.getByDisplayValue('전체 카테고리').selectOption('work')\n      |                ^\n  122 |     await expect(page.getByRole('heading', { name: '업무 보고' })).toBeVisible()\n  123 |     await expect(page.getByRole('heading', { name: '고양이 일기' })).toHaveCount(0)\n  124 |   })\n    at C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts:121:16"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-29T06:28:20.875Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\Desktop\\memo-app\\test-results\\e2e-memo-메모-앱-주요-기능-검색-및-카테고리-필터-동작-webkit\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\memo.spec.ts",
+                        "column": 16,
+                        "line": 121
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "c63b86ea463b987895eb-94da1e54b21465ef4c08",
+              "file": "e2e/memo.spec.ts",
+              "line": 94,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-10-29T06:26:43.446Z",
+    "duration": 107644.54800000001,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 12,
+    "flaky": 0
+  }
+}

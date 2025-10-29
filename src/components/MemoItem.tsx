@@ -1,14 +1,18 @@
 'use client'
 
-import { Memo, MEMO_CATEGORIES } from '@/types/memo'
+import { Memo, MEMO_CATEGORIES, MemoFormData } from '@/types/memo'
+import { useState } from 'react'
+import MemoDetailModal from './MemoDetailModal'
 
 interface MemoItemProps {
   memo: Memo
   onEdit: (memo: Memo) => void
+  onUpdate: (id: string, data: MemoFormData) => void
   onDelete: (id: string) => void
 }
 
-export default function MemoItem({ memo, onEdit, onDelete }: MemoItemProps) {
+export default function MemoItem({ memo, onEdit, onUpdate, onDelete }: MemoItemProps) {
+  const [isDetailOpen, setIsDetailOpen] = useState(false)
   const formatDate = (dateString: string) => {
     const date = new Date(dateString)
     return date.toLocaleDateString('ko-KR', {
@@ -32,7 +36,19 @@ export default function MemoItem({ memo, onEdit, onDelete }: MemoItemProps) {
   }
 
   return (
-    <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6 hover:shadow-lg transition-shadow duration-200">
+    <>
+    <div
+      className="bg-white rounded-lg shadow-md border border-gray-200 p-6 hover:shadow-lg transition-shadow duration-200 cursor-pointer"
+      onClick={() => setIsDetailOpen(true)}
+      role="button"
+      tabIndex={0}
+      onKeyDown={e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault()
+          setIsDetailOpen(true)
+        }
+      }}
+    >
       {/* 헤더 */}
       <div className="flex justify-between items-start mb-3">
         <div className="flex-1">
@@ -55,7 +71,10 @@ export default function MemoItem({ memo, onEdit, onDelete }: MemoItemProps) {
         {/* 액션 버튼 */}
         <div className="flex gap-2 ml-4">
           <button
-            onClick={() => onEdit(memo)}
+            onClick={e => {
+              e.stopPropagation()
+              onEdit(memo)
+            }}
             className="p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
             title="편집"
           >
@@ -74,10 +93,9 @@ export default function MemoItem({ memo, onEdit, onDelete }: MemoItemProps) {
             </svg>
           </button>
           <button
-            onClick={() => {
-              if (window.confirm('정말로 이 메모를 삭제하시겠습니까?')) {
-                onDelete(memo.id)
-              }
+            onClick={e => {
+              e.stopPropagation()
+              setIsDetailOpen(true)
             }}
             className="p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
             title="삭제"
@@ -120,5 +138,14 @@ export default function MemoItem({ memo, onEdit, onDelete }: MemoItemProps) {
         </div>
       )}
     </div>
+
+    <MemoDetailModal
+      isOpen={isDetailOpen}
+      memo={memo}
+      onClose={() => setIsDetailOpen(false)}
+      onUpdate={onUpdate}
+      onDelete={onDelete}
+    />
+    </>
   )
 }

@@ -1,6 +1,6 @@
 'use client'
 
-import { Memo, MEMO_CATEGORIES, DEFAULT_CATEGORIES } from '@/types/memo'
+import { Memo, MEMO_CATEGORIES, DEFAULT_CATEGORIES, MemoFormData } from '@/types/memo'
 import MemoItem from './MemoItem'
 
 interface MemoListProps {
@@ -11,6 +11,7 @@ interface MemoListProps {
   onSearchChange: (query: string) => void
   onCategoryChange: (category: string) => void
   onEditMemo: (memo: Memo) => void
+  onUpdateMemo: (id: string, data: MemoFormData) => void
   onDeleteMemo: (id: string) => void
   stats: {
     total: number
@@ -28,6 +29,7 @@ export default function MemoList({
   onCategoryChange,
   onEditMemo,
   onDeleteMemo,
+  onUpdateMemo,
   stats,
 }: MemoListProps) {
   if (loading) {
@@ -152,6 +154,7 @@ export default function MemoList({
               key={memo.id}
               memo={memo}
               onEdit={onEditMemo}
+              onUpdate={onUpdateMemo}
               onDelete={onDeleteMemo}
             />
           ))}

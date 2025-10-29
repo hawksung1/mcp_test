@@ -1,6 +1,14 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import dynamic from 'next/dynamic'
+
+const MDEditor = dynamic(() => import('@uiw/react-md-editor'), {
+  ssr: false,
+  loading: () => (
+    <div className="h-80 bg-gray-100 rounded-lg flex items-center justify-center">로딩 중...</div>
+  ),
+})
 import {
   Memo,
   MemoFormData,
@@ -168,28 +176,21 @@ export default function MemoForm({
               </select>
             </div>
 
-            {/* 내용 */}
-            <div>
-              <label
-                htmlFor="content"
-                className="block text-sm font-medium text-gray-700 mb-2"
-              >
+            {/* 내용 (Markdown Editor) */}
+            <div data-color-mode="light">
+              <label className="block text-sm font-medium text-gray-700 mb-2">
                 내용 *
               </label>
-              <textarea
-                id="content"
-                value={formData.content}
-                onChange={e =>
-                  setFormData(prev => ({
-                    ...prev,
-                    content: e.target.value,
-                  }))
-                }
-                className="placeholder-gray-400 text-gray-400 w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors resize-none"
-                placeholder="메모 내용을 입력하세요"
-                rows={8}
-                required
-              />
+              <div className="border border-gray-300 rounded-lg overflow-hidden">
+                <MDEditor
+                  value={formData.content}
+                  onChange={value =>
+                    setFormData(prev => ({ ...prev, content: value || '' }))
+                  }
+                  preview="live"
+                  height={320}
+                />
+              </div>
             </div>
 
             {/* 태그 */}

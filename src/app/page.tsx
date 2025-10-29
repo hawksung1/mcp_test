@@ -92,6 +92,7 @@ export default function Home() {
           onSearchChange={searchMemos}
           onCategoryChange={filterByCategory}
           onEditMemo={handleEditMemo}
+          onUpdateMemo={updateMemo}
           onDeleteMemo={deleteMemo}
           stats={stats}
         />
