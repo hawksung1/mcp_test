@@ -89,8 +89,9 @@ export default function MemoDetailModal({ isOpen, memo, onClose, onUpdate, onDel
       }
       const data = await res.json()
       setSummary(data.summary || '')
-    } catch (e: any) {
-      setSummaryError(e?.message || '요약 중 오류가 발생했습니다')
+    } catch (e: unknown) {
+      const message = e instanceof Error ? e.message : '요약 중 오류가 발생했습니다'
+      setSummaryError(message)
     } finally {
       setIsSummarizing(false)
     }
@@ -100,7 +101,7 @@ export default function MemoDetailModal({ isOpen, memo, onClose, onUpdate, onDel
     try {
       if (!summary) return
       await navigator.clipboard.writeText(summary)
-    } catch (e) {
+    } catch {
       // ignore
     }
   }

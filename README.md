@@ -198,3 +198,6 @@ MIT License - 학습 및 실습 목적으로 자유롭게 사용 가능합니다
 ---
 
 **Made with ❤️ for hands-on workshop**
+
+
+https://vercel.com/new/import?framework=nextjs&hasTrialAvailable=1&id=1085555022&name=mcp_test&owner=hawksung1&project-name=mcp-test&provider=github&remainingProjects=1&s=https%3A%2F%2Fgithub.com%2Fhawksung1%2Fmcp_test&totalProjects=1&teamSlug=hyuns-projects-aec794ae&deploymentIds=dpl_3YgAzHHkvfsY7NWZ4mjPVBbDuQpe

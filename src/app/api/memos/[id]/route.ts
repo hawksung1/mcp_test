@@ -22,9 +22,9 @@ const mapRowToMemo = (row: MemoRow): Memo => ({
   updatedAt: row.updated_at,
 })
 
-export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
+export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
-    const id = params.id
+    const { id } = await params
     const body = (await req.json()) as MemoFormData
     const { title, content, category, tags } = body
     if (!id) return NextResponse.json({ error: 'id required' }, { status: 400 })
@@ -42,8 +42,8 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
   }
 }
 
-export async function DELETE(_req: NextRequest, { params }: { params: { id: string } }) {
-  const id = params.id
+export async function DELETE(_req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params
   if (!id) return NextResponse.json({ error: 'id required' }, { status: 400 })
   const { error } = await supabase.from('memos').delete().eq('id', id)
   if (error) return NextResponse.json({ error: error.message }, { status: 500 })

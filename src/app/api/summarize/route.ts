@@ -39,9 +39,10 @@ export async function POST(req: NextRequest) {
 
     const summary = response.text || ''
     return NextResponse.json({ summary })
-  } catch (error: any) {
-    console.error('Summarize error:', error)
-    return NextResponse.json({ error: error?.message || 'Internal Error' }, { status: 500 })
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : 'Internal Error'
+    console.error('Summarize error:', message)
+    return NextResponse.json({ error: message }, { status: 500 })
   }
 }
 
